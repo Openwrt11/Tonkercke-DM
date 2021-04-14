@@ -260,17 +260,6 @@ define Device/k2p
 endef
 TARGET_DEVICES += k2p
 
-define Device/xiaomi_redmi-ac2100
-  $(Device/xiaomi_nand_separate)
-  IMAGE_SIZE := 120320k
-  DEVICE_TITLE := Xiaomi Redmi AC2100
-  DEVICE_PACKAGES := kmod-fs-ext4 kmod-nls-cp936 kmod-nls-utf8 kmod-fs-nfs-v3 kmod-fs-nfs-v4 \
-  luci-nginx luci-app-commands luci-app-watchcat luci-proto-relay luci-app-arpbind luci-app-nfs luci-app-ramfree \
-  bridge zram-swap openssh-sftp-server aircrack-ng ppp-mod-pptp block-mount e2fsprogs \
-  mount-utils nfs-utils nfs-utils-libs screen
-endef
-TARGET_DEVICES += xiaomi_redmi-ac2100
-
 define Device/xiaomi_mir3p
   DTS := MIR3P
   BLOCKSIZE := 128k
@@ -350,7 +339,7 @@ define Device/r6220
   BLOCKSIZE := 128k
   PAGESIZE := 2048
   KERNEL_SIZE := 4096k
-  IMAGE_SIZE := 40960k
+  IMAGE_SIZE := 28672k
   UBINIZE_OPTS := -E 5
   SERCOMM_HWID := AYA
   SERCOMM_HWVER := A001
@@ -593,7 +582,7 @@ TARGET_DEVICES += mqmaker_witi-512m
 define Device/wndr3700v5
   DTS := WNDR3700V5
   BLOCKSIZE := 64k
-  IMAGE_SIZE := 30720k
+  IMAGE_SIZE := 15232k
   SERCOMM_HWID := AYB
   SERCOMM_HWVER := A001
   SERCOMM_SWVER := 0x1054
@@ -693,3 +682,23 @@ define Device/zbt-wg3526-32M
 	kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
 endef
 TARGET_DEVICES += zbt-wg3526-32M
+
+define Device/xiaomi_redmi-router-ac2100
+  DTS := XIAOMI_REDMI-ROUTER-AC2100
+  DEVICE_TITLE := Xiaomi Redmi Router AC2100
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE := 4096k
+  IMAGE_SIZE := 120320k
+  UBINIZE_OPTS := -E 5
+  IMAGES += kernel1.bin rootfs0.bin
+  IMAGE/kernel1.bin := append-kernel
+  IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  DEVICE_PACKAGES += kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware uboot-envtools \
+  kmod-fs-ext4 kmod-nls-cp936 kmod-nls-utf8 kmod-fs-nfs-v3 kmod-fs-nfs-v4 \
+  luci-nginx luci-app-commands luci-app-watchcat luci-proto-relay luci-app-arpbind luci-app-nfs luci-app-ramfree \
+  bridge zram-swap openssh-sftp-server aircrack-ng ppp-mod-pptp block-mount e2fsprogs \
+  mount-utils nfs-utils nfs-utils-libs screen
+endef
+TARGET_DEVICES += xiaomi_redmi-router-ac2100

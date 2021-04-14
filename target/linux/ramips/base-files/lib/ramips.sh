@@ -34,9 +34,6 @@ ramips_board_detect() {
 	*"Air3GII")
 		name="air3gii"
 		;;
-	*"ALL0239-3G")
-		name="all0239-3g"
-		;;
 	*"ALL0256N (4M)")
 		name="all0256n-4M"
 		;;
@@ -217,6 +214,9 @@ ramips_board_detect() {
 	*"GL-MT300N-V2")
 		name="gl-mt300n-v2"
 		;;
+	*"WY-MT7628-V1")
+		name="wy-mt7628-v1"
+		;;
 	*"HC5661")
 		name="hc5661"
 		;;
@@ -280,9 +280,6 @@ ramips_board_detect() {
 	*"Mercury MAC1200R v2")
 		name="mac1200rv2"
 		;;
-	*"Mi Router 3G")
-		name="mir3g"
-		;;
 	*"MicroWRT")
 		name="microwrt"
 		;;
@@ -330,15 +327,6 @@ ramips_board_detect() {
 		;;
 	*"MT7628AN evaluation"*)
 		name="mt7628"
-		;;
-	*"MY-TL-WDR5620-V3")
-		name="my-tl-wdr5620-v3"
-		;;
-	*"TL-WDR5620-V3"*)
-		name="tl-wdr5620-v3"
-		;;
-	*"WY-MT7628-TEST")
-		name="wy-mt7628-test"
 		;;
 	*"MT7688 evaluation"*)
 		name="mt7688"
@@ -427,9 +415,6 @@ ramips_board_detect() {
 	*"R6220")
 		name="r6220"
 		;;
-	*"RB750Gr3")
-		name="rb750gr3"
-		;;
 	*"RE350 v1")
 		name="re350-v1"
 		;;
@@ -510,9 +495,6 @@ ramips_board_detect() {
 		;;
 	*"U25AWF-H1")
 		name="u25awf-h1"
-		;;
-	*"U7621-06 (256M RAM/16M flash)")
-		name="u7621-06-256M-16M"
 		;;
 	*"U7628-01 (128M RAM/16M flash)")
 		name="u7628-01-128M-16M"
@@ -598,14 +580,8 @@ ramips_board_detect() {
 	*"WL-330N3G")
 		name="wl-330n3g"
 		;;
-	*"WL-341 v3")
-		name="wl-341v3"
-		;;
 	*"WL-351 v1 002")
 		name="wl-351"
-		;;
-	*"WL-WN575A3")
-		name="wl-wn575a3"
 		;;
 	*"WLI-TX4-AG300N")
 		name="wli-tx4-ag300n"
